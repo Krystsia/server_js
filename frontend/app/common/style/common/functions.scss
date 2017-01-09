@@ -1,0 +1,7 @@
+@function lines($count: 1) {
+    @return $count * $base-line-height;
+}
+
+@function active-state($element: unquote("&")) {
+    @return unquote("#{$element}:hover, #{$element}:active, #{$element}:focus");
+}

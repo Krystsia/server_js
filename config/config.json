@@ -1,0 +1,15 @@
+{
+  "port": 8080,
+  "mongoose": {
+    "uri": "mongodb://kirill:12345@ds157298.mlab.com:57298/it-news"
+  },
+  "session": {
+    "secret": "KrystsiaSite",
+    "key": "sid",
+    "cookie": {
+      "path": "/",
+      "httpOnly": true,
+      "maxAge": null
+    }
+  }
+}

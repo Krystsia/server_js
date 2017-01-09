@@ -1,0 +1,37 @@
+doctype html
+html
+  head
+    title.elegant-title #{title}
+    link(rel='stylesheet', href='style.css')
+    meta(name="viewport" content="initial-scale=1, maximum-scale=1")
+  body
+    main
+      - var show = true
+        if show
+          .preheader
+            .preheaderInfo.name-info Hello #{user}!
+            .login
+              - if (!user) {
+              a.exit(href='/login') Log in
+              - } else {
+              a.exit(href='/logout') Log out
+              - }
+          header.header
+            - var categories =  ['The BBC News', 'National Geographic News', 'Blog']
+            - var link = ['/', '/ng', '/blog']
+            h1.elegant-title #{title}        
+            ul.navigation
+            - for (var i = 0; i < categories.length; i ++) { 
+                li.navigation__item.active
+                  a(href='#{link[i]}')=categories[i]
+            -}
+      block content
+      block footer
+        if !hidden
+          footer
+            p Powered by
+              a(href='https://newsapi.org/')  NewsAPI.org
+    script(defer src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser-polyfill.min.js")
+    script(defer src="common.js")
+    block current-script
+        

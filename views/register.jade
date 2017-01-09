@@ -1,0 +1,15 @@
+extends layout
+
+block header
+  -var hidden = true
+block content
+  main.login-page
+    form(action="/register" method="POST" name="registerForm")
+      h4.elegant-register-heading Add login and password
+      label.elegant-label(for="login") Login
+      input.elegant-input(type="text" name="username" id="login")
+      label.elegant-label(for="password") Password
+      input.elegant-input(type="test" name="password" id="password")
+      input.elegant-button(type='submit' name='submit' value="register")
+  block footer
+    -var hidden = true
