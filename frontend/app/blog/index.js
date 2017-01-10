@@ -12,15 +12,15 @@ import Article from '../common/components/articleComponent/article.js';
 
       addArticleForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        let title = addArticleForm.elements.title.value;
-        let content = addArticleForm.elements.content.value;
+
+        let form = new FormData();
+        form.append('title', addArticleForm.elements.title.value);
+        form.append('content', addArticleForm.elements.content.value);
+        form.append('image', addArticleForm.elements.image.files[0]);
 
         fetch('/addNewArticle', {
             method: "POST",
-            headers: {
-              "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-            },
-            body: `title=${title}&content=${content}`
+            body: form
           }).then((response) => {
             return response.json();
           }).then((data) => {

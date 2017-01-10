@@ -8,10 +8,12 @@ const passport = require('./initializers/passport');
 const root = process.env.PWD;
 const app = express();
 const router = require('./routes');
+const fileUpload = require('express-fileupload');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+app.use(fileUpload());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 

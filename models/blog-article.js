@@ -19,12 +19,14 @@ const BlogArticleSchema = mongoose.Schema({
     required: true
   },
   url: {
-    type: String,
-    required: true
+    type: String
   },
   publishedAt: {
     type: Date,
     required: true
+  },
+  urlToImage: {
+    type: String
   }
 });
 

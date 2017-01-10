@@ -23,15 +23,15 @@ webpackJsonp_name_([1,4],[
 
 	    addArticleForm.addEventListener('submit', function (event) {
 	      event.preventDefault();
-	      var title = addArticleForm.elements.title.value;
-	      var content = addArticleForm.elements.content.value;
+
+	      var form = new FormData();
+	      form.append('title', addArticleForm.elements.title.value);
+	      form.append('content', addArticleForm.elements.content.value);
+	      form.append('image', addArticleForm.elements.image.files[0]);
 
 	      fetch('/addNewArticle', {
 	        method: "POST",
-	        headers: {
-	          "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-	        },
-	        body: 'title=' + title + '&content=' + content
+	        body: form
 	      }).then(function (response) {
 	        return response.json();
 	      }).then(function (data) {
