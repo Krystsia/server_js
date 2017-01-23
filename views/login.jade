@@ -1,13 +1,10 @@
 extends layout
-block header
-  -var hidden = true
+
 block content
   .login-page
     form(action="/login" method="POST" name="loginForm")
       label.elegant-label(for="login") Login
-      input.elegant-input(type="text" name="username" id="login")
+      input.elegant-input(type="text" name="username" id="login" required)
       label.elegant-label(for="password") Password
-      input.elegant-input(type="test" name="password" id="passw0rd")
+      input.elegant-input(type="test" name="password" id="password" required)
       input.elegant-button(type='submit' name='submit')
-block footer
-  -var hidden = true

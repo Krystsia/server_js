@@ -2,8 +2,6 @@ import { actions } from '../actions/actions.js';
 import Highlight from '../common/services/highlight_service.js';
 
 
-let a = require('../some.json');
-
 console.log(a);
 
 ((d) => {

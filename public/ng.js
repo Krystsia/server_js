@@ -5,8 +5,6 @@ webpackJsonp_name_([3,4],[
 
 	'use strict';
 
-	__webpack_require__(28);
-
 	var _getData_service = __webpack_require__(2);
 
 	var _getData_service2 = _interopRequireDefault(_getData_service);
@@ -474,9 +472,7 @@ webpackJsonp_name_([3,4],[
 	    options = options || {};
 	    var body = options.body;
 
-	    if (typeof input === 'string') {
-	      this.url = input;
-	    } else {
+	    if (input instanceof Request) {
 	      if (input.bodyUsed) {
 	        throw new TypeError('Already read');
 	      }
@@ -491,6 +487,8 @@ webpackJsonp_name_([3,4],[
 	        body = input._bodyInit;
 	        input.bodyUsed = true;
 	      }
+	    } else {
+	      this.url = String(input);
 	    }
 
 	    this.credentials = options.credentials || this.credentials || 'omit';
@@ -526,7 +524,7 @@ webpackJsonp_name_([3,4],[
 
 	  function parseHeaders(rawHeaders) {
 	    var headers = new Headers();
-	    rawHeaders.split('\r\n').forEach(function (line) {
+	    rawHeaders.split(/\r?\n/).forEach(function (line) {
 	      var parts = line.split(':');
 	      var key = parts.shift().trim();
 	      if (key) {
@@ -1094,14 +1092,6 @@ webpackJsonp_name_([3,4],[
 	}();
 
 		exports.default = ArticleView;
-
-/***/ },
-/* 26 */,
-/* 27 */,
-/* 28 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
 
 /***/ }
 ]);

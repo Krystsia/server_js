@@ -1,5 +1,5 @@
 var bbc =
-webpackJsonp_name_([0,4],[
+webpackJsonp_name_([0,3],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -12,8 +12,6 @@ webpackJsonp_name_([0,4],[
 	var _highlight_service2 = _interopRequireDefault(_highlight_service);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var a = __webpack_require__(16);
 
 	console.log(a);
 
@@ -543,9 +541,7 @@ webpackJsonp_name_([0,4],[
 	    options = options || {};
 	    var body = options.body;
 
-	    if (typeof input === 'string') {
-	      this.url = input;
-	    } else {
+	    if (input instanceof Request) {
 	      if (input.bodyUsed) {
 	        throw new TypeError('Already read');
 	      }
@@ -560,6 +556,8 @@ webpackJsonp_name_([0,4],[
 	        body = input._bodyInit;
 	        input.bodyUsed = true;
 	      }
+	    } else {
+	      this.url = String(input);
 	    }
 
 	    this.credentials = options.credentials || this.credentials || 'omit';
@@ -595,7 +593,7 @@ webpackJsonp_name_([0,4],[
 
 	  function parseHeaders(rawHeaders) {
 	    var headers = new Headers();
-	    rawHeaders.split('\r\n').forEach(function (line) {
+	    rawHeaders.split(/\r?\n/).forEach(function (line) {
 	      var parts = line.split(':');
 	      var key = parts.shift().trim();
 	      if (key) {
@@ -1481,61 +1479,6 @@ webpackJsonp_name_([0,4],[
 	    }
 	  }, _marked[0], this, [[3, 14, 18, 26], [19,, 21, 25]]);
 		}
-
-/***/ },
-/* 16 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	module.exports = {
-		"description": "home works for frontcamp2",
-		"main": "index.js",
-		"scripts": {
-			"test": "echo \"Error: no test specified\" && exit 1",
-			"build": "babel ./js --watch --out-dir ./js-compiled",
-			"run": "webpack --display-error-details",
-			"undefined": 2
-		},
-		"repository": {
-			"type": "git",
-			"url": "git+https://krystsia@github.com/Krystsia/home-tasks.git",
-			"undefined": 2
-		},
-		"author": "Kiryl Krystsia",
-		"license": "ISC",
-		"bugs": {
-			"url": "https://github.com/Krystsia/home-tasks/issues",
-			"undefined": 2
-		},
-		"homepage": "https://github.com/Krystsia/home-tasks#readme",
-		"devDependencies": {
-			"babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
-			"babel-polyfill": "^6.16.0",
-			"babel-preset-es2015": "^6.18.0",
-			"babel-preset-es2015-ie": "6.6.2",
-			"babel-preset-stage-1": "^6.16.0",
-			"babel-preset-stage-2": "^6.18.0",
-			"compass-mixins": "^0.12.10",
-			"css-loader": "^0.26.0",
-			"extract-text-webpack-plugin": "^1.0.1",
-			"json-loader": "^0.5.4",
-			"node-sass": "^3.13.0",
-			"postcss-loader": "^1.1.1",
-			"sass-loader": "^4.0.2",
-			"style-loader": "^0.13.1",
-			"susy": "^2.2.12",
-			"webpack": "^1.13.3",
-			"webpack-dev-server": "^1.16.2",
-			"whatwg-fetch": "^2.0.1",
-			"undefined": 5
-		},
-		"dependencies": {
-			"whatwg-fetch": "^2.0.1",
-			"undefined": 5
-		},
-		"undefined": 5
-		};
 
 /***/ }
 ]);

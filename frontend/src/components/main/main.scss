@@ -1,0 +1,6 @@
+@import '../../common/style/common';
+
+main {
+  flex-grow: 1;
+  @include pad-arround;
+}

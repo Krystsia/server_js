@@ -1,5 +1,5 @@
 {
-  "port": 8080,
+  "port": 9090,
   "mongoose": {
     "uri": "mongodb://kirill:12345@ds157298.mlab.com:57298/it-news"
   },

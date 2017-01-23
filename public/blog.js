@@ -1,11 +1,11 @@
 var blog =
-webpackJsonp_name_([1,4],[
+webpackJsonp_name_([1,3],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(fetch) {'use strict';
 
-	var _article = __webpack_require__(17);
+	var _article = __webpack_require__(16);
 
 	var _article2 = _interopRequireDefault(_article);
 
@@ -354,9 +354,7 @@ webpackJsonp_name_([1,4],[
 	    options = options || {};
 	    var body = options.body;
 
-	    if (typeof input === 'string') {
-	      this.url = input;
-	    } else {
+	    if (input instanceof Request) {
 	      if (input.bodyUsed) {
 	        throw new TypeError('Already read');
 	      }
@@ -371,6 +369,8 @@ webpackJsonp_name_([1,4],[
 	        body = input._bodyInit;
 	        input.bodyUsed = true;
 	      }
+	    } else {
+	      this.url = String(input);
 	    }
 
 	    this.credentials = options.credentials || this.credentials || 'omit';
@@ -406,7 +406,7 @@ webpackJsonp_name_([1,4],[
 
 	  function parseHeaders(rawHeaders) {
 	    var headers = new Headers();
-	    rawHeaders.split('\r\n').forEach(function (line) {
+	    rawHeaders.split(/\r?\n/).forEach(function (line) {
 	      var parts = line.split(':');
 	      var key = parts.shift().trim();
 	      if (key) {
@@ -609,8 +609,7 @@ webpackJsonp_name_([1,4],[
 /* 13 */,
 /* 14 */,
 /* 15 */,
-/* 16 */,
-/* 17 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -619,17 +618,17 @@ webpackJsonp_name_([1,4],[
 	    value: true
 	});
 
-	__webpack_require__(18);
+	__webpack_require__(17);
 
-	var _article_model = __webpack_require__(22);
+	var _article_model = __webpack_require__(18);
 
 	var _article_model2 = _interopRequireDefault(_article_model);
 
-	var _article_ctrl = __webpack_require__(24);
+	var _article_ctrl = __webpack_require__(20);
 
 	var _article_ctrl2 = _interopRequireDefault(_article_ctrl);
 
-	var _article_view = __webpack_require__(25);
+	var _article_view = __webpack_require__(21);
 
 	var _article_view2 = _interopRequireDefault(_article_view);
 
@@ -732,16 +731,13 @@ webpackJsonp_name_([1,4],[
 	}
 
 /***/ },
-/* 18 */
+/* 17 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -750,7 +746,7 @@ webpackJsonp_name_([1,4],[
 	    value: true
 	});
 
-	var _model = __webpack_require__(23);
+	var _model = __webpack_require__(19);
 
 	var _model2 = _interopRequireDefault(_model);
 
@@ -789,7 +785,7 @@ webpackJsonp_name_([1,4],[
 		exports.default = ArticleModel;
 
 /***/ },
-/* 23 */
+/* 19 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -817,7 +813,7 @@ webpackJsonp_name_([1,4],[
 		exports.default = Model;
 
 /***/ },
-/* 24 */
+/* 20 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -873,7 +869,7 @@ webpackJsonp_name_([1,4],[
 		exports.default = ArticleCtrl;
 
 /***/ },
-/* 25 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

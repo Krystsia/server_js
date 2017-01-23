@@ -1,0 +1,20 @@
+//colors
+
+$white: #fff;
+$brown: #504444;
+$brown-light: lighten($brown, 40%);
+$teal: #0D4D4D;
+$teal-dark: #003333;
+$teal-light: #407F7F;
+$teal-ultra-light: #669999;
+$gray: #524f4f;
+
+$primary-font-color: #0B1D23;
+
+$base-font-size : 14px;
+
+$media-query: (
+    "large": 1640px,
+    "medium": 1040px,
+    "small": 960px
+);

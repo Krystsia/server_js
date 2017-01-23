@@ -7,8 +7,7 @@ mongoose.connect(config.get('mongoose:uri'));
 
 const BlogArticleSchema = mongoose.Schema({
   username: {
-    type: String,
-    required: true
+    type: String
   },
   title: {
     type: String,
@@ -22,11 +21,11 @@ const BlogArticleSchema = mongoose.Schema({
     type: String
   },
   publishedAt: {
-    type: Date,
-    required: true
+    type: Date
   },
   urlToImage: {
-    type: String
+    type: String,
+    required: true
   }
 });
 

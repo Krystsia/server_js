@@ -13,9 +13,9 @@ const fileUpload = require('express-fileupload');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.use(fileUpload());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(fileUpload());
 
 const MongoStore = require('connect-mongo')(session);
 
@@ -33,13 +33,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
-
 app.use(express.static(path.join(root, 'public')));
 
 app.use('/', router)
 // app.get(router);
-
 
 //  error handler
 app.use(function(req, res, next) {
@@ -55,7 +52,7 @@ app.use((err, req, res, next) => {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.send('Error');
 });
 
 module.exports = app;

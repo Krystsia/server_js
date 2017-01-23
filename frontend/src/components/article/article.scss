@@ -1,0 +1,38 @@
+@import '../../common/style/common';
+
+article {
+  @include trailer(2);
+  border-bottom: 1px solid $brown;
+
+  
+
+  .article-image {
+    height: 300px;
+    overflow: hidden;
+    background-color: $teal-dark;
+
+    img {
+        width: 100%;
+        opacity: .8;
+    }
+  }
+
+  .article-description {
+    @include font-primary;
+    @include padding-leader(2/3);
+  }
+
+  footer {
+    @include container;
+
+    span {
+      @include font-primary($font-size: 12px, $color: $gray);
+      &:first-of-type {
+        float: left;
+      }
+      &:last-of-type {
+        float: right
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@import '../../common/style/common';
+
+.add-new-article {
+  flex-grow: 1;
+  @include container;
+  @include pad-arround(1);
+  display: block !important;
+
+
+  h2 {
+    @include font-title($font-size: 32px, $color: $brown-light);
+    text-align: center;
+    display: block;
+    border-top: 4px solid $brown;
+    @include padding-leader(1);
+    @include trailer(1);
+  }
+
+  .elegant-image-button {
+    display: block;
+    @include font-title($font-size: 24px, $color: $white);
+    background: $brown;
+    border: 1px solid $white;
+    @include pad(lines(1));
+    @include rhythm($padding-leader: 1/6, $padding-trailer: 1/6);
+    cursor: pointer;
+
+    #{active-state()} {
+      outline: none;
+      background: transparentize($brown, .2);
+    }
+
+    +input {
+      opacity: 0;
+    }
+  }
+
+  form {
+    width: 100%;
+    text-align: left;
+  }
+
+  fieldset {
+    @include trailer(1);
+    border: none;
+  }
+
+  label {
+    @include font-primary(24px);
+  }
+}

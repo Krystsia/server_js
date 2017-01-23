@@ -1,12 +1,9 @@
 var login =
-webpackJsonp_name_([2,4],{
-
-/***/ 0:
-/***/ function(module, exports, __webpack_require__) {
+webpackJsonp_name_([2,3],[
+/* 0 */
+/***/ function(module, exports) {
 
 	'use strict';
-
-	__webpack_require__(26);
 
 	(function (d) {
 	    d.addEventListener('DOMContentLoaded', function () {
@@ -14,14 +11,6 @@ webpackJsonp_name_([2,4],{
 	    });
 	})(document);
 
-/***/ },
-
-/***/ 26:
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
 /***/ }
-
-});
+]);
 //# sourceMappingURL=login.js.map

@@ -1,0 +1,26 @@
+@import '../../common/style/common';
+
+header {
+  height: 400px;
+  background-image: url("../../../../public/images/header.jpg");
+  background-attachment: fixed;
+  @include pad-arround;
+
+  .title {
+    @include font-title(44px);
+    float: left;
+  }
+
+  .registration {
+    float: right;
+    a {
+      @include font-primary($color: $brown);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: line-through;
+      }
+    }
+
+  }
+}

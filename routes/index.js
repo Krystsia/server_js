@@ -11,8 +11,6 @@ router.use(function timeLog (req, res, next) {
 })
 
 router.get('/', controllers.main);
-router.get('/ng', controllers.ng);
-router.get('/blog', controllers.blog);
 
 router.route('/login')
   .get(controllers.login)

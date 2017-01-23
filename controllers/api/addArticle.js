@@ -6,6 +6,7 @@ const imageStore = path.join(pwd, 'public/images');
 
 
 module.exports = (req, res, next) => {
+
   if(req.files) {
     fs.writeFile(path.join(imageStore, req.files.image.name), req.files.image.data, (err) => {
       if (err) throw err;
@@ -18,7 +19,6 @@ module.exports = (req, res, next) => {
         publishedAt: new Date().toString(),
         urlToImage: './images/' + req.files.image.name
       })
-
 
       blogArticle.save((err, blogArticle, affected) => {
         if(err) throw err;
@@ -44,7 +44,7 @@ module.exports = (req, res, next) => {
     blogArticle.save((err, blogArticle, affected) => {
       if(err) throw err;
 
-      BlogArticle.findOne({title: req.body.title}, (err, result) => {
+      blogArticle.findOne({title: req.body.title}, (err, result) => {
         let shapeResult = {
           articles: result
         }
