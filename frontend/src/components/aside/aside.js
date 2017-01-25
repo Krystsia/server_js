@@ -3,21 +3,30 @@ import React, { Component } from 'react'
 import './aside.scss';
 
 export default class Aside extends Component {
+  findArticle() {
+    this.props.findArticle(this.searchInput.value);
+  }
 
   render() {
     return <aside>
             <h2 className="title">Choose your preference</h2>
             <div className="side-area">
-              <input type="search" className="elegant-input" placeholder="Search Article"/>
+              <input
+                type="search"
+                ref={(input) => {this.searchInput = input}}
+                className="elegant-input"
+                placeholder="Search Article"
+                onChange={::this.findArticle}
+              />
               <h3>Categories</h3>
               <ul className="elegant-list">
-                <li>item 1</li>
-                <li>item 2</li>
-                <li>item 3</li>
-                <li>item 4</li>
-                <li>item 5</li>
-                <li>item 6</li>
-                <li>item 7</li>
+                <li>Categories 1</li>
+                <li>Categories 2</li>
+                <li>Categories 3</li>
+                <li>Categories 4</li>
+                <li>Categories 5</li>
+                <li>Categories 6</li>
+                <li>Categories 7</li>
               </ul>
             </div>
            </aside>

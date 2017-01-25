@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
-import page from './page';
 import user from './user';
 import articles from './articles';
+import filterArticles from './filterArticles';
 
 export default combineReducers({
-  page,
   user,
-  articles
+  articles,
+  filterArticles
 })

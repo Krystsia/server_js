@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
      if(err) return next(err);
      if(user) {
        req.logIn(user, function(err) {
-         if (err) return next(err)
+         if (err) return next(err);
          res.redirect('/');
        })
      } else {

@@ -44,7 +44,7 @@ module.exports = (req, res, next) => {
     blogArticle.save((err, blogArticle, affected) => {
       if(err) throw err;
 
-      blogArticle.findOne({title: req.body.title}, (err, result) => {
+      BlogArticle.findOne({title: req.body.title}, (err, result) => {
         let shapeResult = {
           articles: result
         }

@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import User from '../components/user';
-import Page from '../components/page';
 import Header from '../components/header/header';
-import Main from '../components/main/main';
+import Main from './main/main';
 import Aside from '../components/aside/aside';
-import AddArticle from './addArticle/addArticle';
+import AddArticle from '../components/addArticle/addArticle';
 import * as pageActions from '../actions/pageAction';
 
 import './core.scss';
@@ -14,14 +13,14 @@ import './core.scss';
 
 class App extends Component {
   render() {
-    const { user, page } = this.props;
-    const { setYear } = this.props.pageActions;
+    const { user } = this.props;
+
 
     return <div>
               <Header />
               <div className="container">
                 <Main getAllArticles={this.props.onGetData} />
-                <Aside />
+                <Aside findArticle={this.props.onFindArticle}/>
               </div>
               <div className="container">
                 <div className="add-new-article">
@@ -35,14 +34,15 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-    user: state.user,
-    page: state.page
+    user: state.user
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    pageActions: bindActionCreators(pageActions, dispatch),
+    onFindArticle: (text) => {
+      dispatch({type: 'FIND_ARTICLES', payload: text});
+    },
     onGetData: () => {
       const getArticles = () => {
         return dispatch => {
