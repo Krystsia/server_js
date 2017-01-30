@@ -17,7 +17,7 @@ export default function routing($stateProvider, $urlRouterProvider) {
       //  `${require('./add-aritcle.html')}`
     })
     .state('editArticle', {
-      url: '/admin/editArticle',
+      url: '/admin/editArticle/:articleID',
       template: `<div>Heeloooooooo!</div>`
     })
 }

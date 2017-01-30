@@ -1,7 +1,7 @@
 <article>
   <h2 class="title">{{articleCtrl.articleData.title}}</h2>
   <div class="article-image">
-    <img  src="#" />
+    <img  src="{{articleCtrl.articleData.urlToImage}}" />
   </div>
   <p class="article-description">{{articleCtrl.articleData.description}}
 
@@ -10,4 +10,5 @@
     <span>Published at {{articleCtrl.articleData.publishedDate}}</span>
     <span>Published by {{articleCtrl.articleData.username}}</span>
   </footer>
+  <a ui-sref="editArticle({articleID: articleCtrl.articleData._id})">Edit</a>
 </article>

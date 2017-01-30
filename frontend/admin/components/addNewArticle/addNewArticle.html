@@ -1,0 +1,18 @@
+<form action="#" method="#" name="newArticle" id="newArticle">
+  <fieldset>
+    <label className="elegant-label" htmlFor="elegant-title">Insert Title</label>
+    <input className="elegant-input" type="text" name="elegant-title" id="title" />
+  </fieldset>
+  <fieldset>
+    <label className="elegant-image-button" htmlFor="elegant-image">
+      <input type="file" name="image" id="elegant-image"/>
+      <span>Choose Image</span>
+    </label>
+
+  </fieldset>
+  <fieldset>
+    <label className="elegant-label" htmlFor="elegant-text">Insert Text</label>
+    <textarea className="elegant-textarea" name="content" id="elegant-text"></textarea>
+  </fieldset>
+  <input className="elegant-button" type="submit" value="Add Article" onClick={::this.onAddArticle}/>
+</form>

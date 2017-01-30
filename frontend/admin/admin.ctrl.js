@@ -4,12 +4,13 @@ import getArticles from './services/getArticles';
 export default class AdminCtrl {
   constructor(getArticles) {
 
-    getArticles.toArticles.get().$promise.then((data)=>{
-      this.data = data;
+    let data = getArticles.toArticles.get({}, () => {
+      this.articles = data.articles;
     });
 
-    //this.articles = this.data.articles;
-    console.log(this.data);
+
+
+
   }
 }
 
