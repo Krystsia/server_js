@@ -4,17 +4,20 @@ export default function routing($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('admin', {
       url: '/admin',
-      template: `<a ui-sref=".editArticle">add</a>`
+      template: require("./admin.html"),
+      controller: 'AdminCtrl',
+      controllerAs: 'AdminCtrl'
     })
-    .state('admin.addArticle', {
-      url: '/addArticle',
-      template: require("html-loader?interpolate!./add-aritcle.html"),
-      controller: 'HomeController',
-      controllerAs: 'home'
+    .state('addArticle', {
+      url: '/admin/addArticle',
+      template: require("./add-aritcle.html"),
+
+      // controller: 'HomeController',
+      // controllerAs: 'home'
       //  `${require('./add-aritcle.html')}`
     })
-    .state('admin.editArticle', {
-      url: '/editArticle',
+    .state('editArticle', {
+      url: '/admin/editArticle',
       template: `<div>Heeloooooooo!</div>`
     })
 }

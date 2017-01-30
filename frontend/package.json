@@ -51,6 +51,7 @@
   },
   "dependencies": {
     "angular": "^1.6.1",
+    "angular-resource": "^1.6.1",
     "angular-ui-router": "^0.4.2",
     "babel-polyfill": "^6.3.14",
     "babel-runtime": "^6.3.19",

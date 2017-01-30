@@ -1,4 +1,4 @@
-export default class HeaderCtrl {
+export default class MainHeaderCtrl {
   constructor() {
     this.title = 'My Blog'
   }
