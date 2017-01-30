@@ -4,12 +4,15 @@ const webpack = require('webpack');
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
-  entry: './src/index',
+  entry: {
+    'common': './src/index',
+    'admin': './admin/index'
+  },
 
   output: {
       path: "./../public",
       publicPath: './../',
-      filename: "common.js"
+      filename: "[name].js"
   },
 
   plugins: [
@@ -24,6 +27,7 @@ module.exports = {
         loaders: ['babel-loader'],
         include: [
           path.resolve(__dirname, "src"),
+          path.resolve(__dirname, "admin"),
         ],
         test: /\.js$/,
         plugins: ['transform-runtime'],
@@ -38,6 +42,13 @@ module.exports = {
             'file?hash=sha512&digest=hex&name=[hash].[ext]',
             'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
         ]
+      },
+    {
+        test: /\.html$/,
+        loader: 'html',
+        query: {
+          minimize: true
+        }
       }
     ]
   },

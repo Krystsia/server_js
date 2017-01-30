@@ -12,6 +12,8 @@ router.use(function timeLog (req, res, next) {
 
 router.get('/', controllers.main);
 
+router.get('/admin', controllers.admin);
+
 router.route('/login')
   .get(controllers.login)
   .post(controllers.api.login);
