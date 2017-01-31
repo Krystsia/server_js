@@ -1,10 +1,10 @@
 import angular from 'angular';
 import AddNewArticleCtrl from './addNewArticle.ctrl';
-import './article.scss';
+import './addNewArticle.scss';
 
 const newArticle = angular.module('components.newArticle', []);
 
-article.controller('addNewarticleCtrl', AddNewArticleCtrl);
+newArticle.controller('addNewarticleCtrl', AddNewArticleCtrl);
 
 function addNewArticle() {
   return {
@@ -15,6 +15,6 @@ function addNewArticle() {
   }
 }
 
-export default article
-  .component('newArticle', addNewArticle())
+export default newArticle
+  .component('addNewArticle', addNewArticle())
   .name;

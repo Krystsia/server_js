@@ -11,10 +11,6 @@ export default function routing($stateProvider, $urlRouterProvider) {
     .state('addArticle', {
       url: '/admin/addArticle',
       template: require("./add-aritcle.html"),
-
-      // controller: 'HomeController',
-      // controllerAs: 'home'
-      //  `${require('./add-aritcle.html')}`
     })
     .state('editArticle', {
       url: '/admin/editArticle/:articleID',
