@@ -7,11 +7,7 @@ export default class AdminCtrl {
     let data = getArticles.toArticles.get({}, () => {
       this.articles = data.articles;
     });
-
-
-
-
   }
 }
 
-AdminCtrl.$inject = ['getArticles'];
+AdminCtrl['$inject'] = ['getArticles'];

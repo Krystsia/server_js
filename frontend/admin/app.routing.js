@@ -1,3 +1,6 @@
+import getArticles from './services/getArticles';
+
+
 export default function routing($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
 
@@ -14,6 +17,10 @@ export default function routing($stateProvider, $urlRouterProvider) {
     })
     .state('editArticle', {
       url: '/admin/editArticle/:articleID',
-      template: `<div>Heeloooooooo!</div>`
+      template: require("./edit-article.html"),
+      controller: function($stateParams) {
+        this.articleID = $stateParams.articleID;
+      },
+      controllerAs: 'editArticleCtrl'
     })
 }
