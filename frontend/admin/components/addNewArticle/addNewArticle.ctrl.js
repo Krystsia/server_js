@@ -1,24 +1,18 @@
+import getArticles from '../../services/getArticles';
+
 export default class AddNewArticleCtrl {
-  constructor() {
+  constructor(FileUploader, getArticles) {
     this.data = {};
+    this.uploader = new FileUploader();
+    console.log(this.uploader);
+
   }
 
-  onAddArticle() {
-    const addArticleForm = document.forms.newArticle;
-    let form = new FormData();
-
-
-
-    form.append('title', addArticleForm.elements.title.value);
-    form.append('content', addArticleForm.elements.content.value);
-    form.append('image', addArticleForm.elements.image.files[0]);
-
-    fetch('/addNewArticle', {method: "POST", body: form}).then((response) => {
-        return response.json();
-    }).then((data) => {
-        console.log(data);
-        addArticleForm.reset();
-        dispatch({type: 'ADD_ARTICLE', payload: data.articles});
-    }).catch((error) => {console.log(error)});
-  }
+  // onAddArticle() {
+  //   this.uploader.formdata.push(this.data);
+  //   this.uploader.upload();
+  // }
 }
+
+AddNewArticleCtrl['$inject'] = ['FileUploader'];
+AddNewArticleCtrl['$inject'] = ['getArticles'];

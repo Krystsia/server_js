@@ -6,19 +6,28 @@
     </fieldset>
     <fieldset>
       <label class="elegant-image-button" htmlFor="elegant-image">
-        <input type="file" name="image" id="elegant-image" ng-model="addNewArticleCtrl.data.image"/>
+        <input
+          type="file"
+          name="image"
+          id="elegant-image"
+          ng-model="addNewArticleCtrl.data.image"
+          nv-file-select
+          nv-file-drop
+          uploader="addNewArticleCtrl.uploader"
+        />
         <span>Choose Image</span>
       </label>
+      <div>{{addNewArticleCtrl.uploader.queue[0].file.name}}</div>
     </fieldset>
     <fieldset>
       <label class="elegant-label" htmlFor="elegant-text">Insert Text</label>
       <textarea class="elegant-textarea" name="content" id="elegant-text" ng-model="addNewArticleCtrl.data.description"></textarea>
     </fieldset>
-    <input class="elegant-button" type="submit" value="Add Article"/>
+    <input class="elegant-button" type="submit" value="Add Article" ng-click="addNewArticleCtrl.onAddArticle"/>
   </form>
 </div>
 <div class="">
   {{addNewArticleCtrl.data.title}}
   {{addNewArticleCtrl.data.description}}
-  {{addNewArticleCtrl.data.image}}
+  {{addNewArticleCtrl.uploader.queue[0].file.name}}
 </div>
