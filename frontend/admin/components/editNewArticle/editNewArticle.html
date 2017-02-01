@@ -1,18 +1,25 @@
-<form action="#" method="#" name="newArticle" id="newArticle">
-  <fieldset>
-    <label className="elegant-label" htmlFor="elegant-title">Insert Title</label>
-    <input className="elegant-input" type="text" name="elegant-title" id="title" />
+<div class="edit-new-article">
+  <h2>Edit Article</h2>
+  <form action="#" method="#" name="newArticle" id="newArticle">
+    <fieldset>
+      <label class="elegant-label" htmlFor="elegant-title">Change Title</label>
+      <input class="elegant-input" type="text" name="elegant-title" id="title" value="{{editNewArticleCtrl.article.title}}"/>
+    </fieldset>
+    <fieldset>
+      <label class="elegant-image-button" htmlFor="elegant-image">
+        <input type="file" name="image" id="elegant-image" />
+        <span>Choose Another Image</span>
+      </label>
+    </fieldset>
+    <fieldset>
+    <div class="article-image">
+      <img src="{{editNewArticleCtrl.article.urlToImage}}" />
+    </div>
   </fieldset>
-  <fieldset>
-    <label className="elegant-image-button" htmlFor="elegant-image">
-      <input type="file" name="image" id="elegant-image"/>
-      <span>Choose Image</span>
-    </label>
-
-  </fieldset>
-  <fieldset>
-    <label className="elegant-label" htmlFor="elegant-text">Insert Text</label>
-    <textarea className="elegant-textarea" name="content" id="elegant-text"></textarea>
-  </fieldset>
-  <input className="elegant-button" type="submit" value="Add Article"/>
-</form>
+    <fieldset>
+      <label class="elegant-label" htmlFor="elegant-text">Change Text</label>
+      <textarea class="elegant-textarea" type="text" name="content" id="elegant-text">{{editNewArticleCtrl.article.description}}</textarea>
+    </fieldset>
+    <input class="elegant-button" type="submit" value="Save Changes" />
+  </form>
+</div>

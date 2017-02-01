@@ -1,11 +1,9 @@
 <main-header></main-header>
 <div class="container">
   <main>
-    <ul>
-      <li ng-repeat="article in AdminCtrl.articles">
-        <blog-article  article-data="article"><blog-article>
-      </li>
-    </ul>
+    <div ng-repeat="article in AdminCtrl.articles">
+      <blog-article  article-data="article"><blog-article>
+    </div>
     <add-new-article></add-new-article>
   </main>
   <aside></aside>

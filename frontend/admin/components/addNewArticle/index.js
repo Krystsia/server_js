@@ -2,19 +2,19 @@ import angular from 'angular';
 import AddNewArticleCtrl from './addNewArticle.ctrl';
 import './addNewArticle.scss';
 
-const newArticle = angular.module('components.newArticle', []);
+const addArticle = angular.module('components.addArticle', []);
 
-newArticle.controller('addNewarticleCtrl', AddNewArticleCtrl);
+addArticle.controller('addNewArticleCtrl', AddNewArticleCtrl);
 
 function addNewArticle() {
   return {
     restrict: 'E',
-    template: require('./addNewarticle.html'),
-    controller: 'addNewarticleCtrl',
-    controllerAs: 'addNewarticleCtrl'
+    template: require('./addNewArticle.html'),
+    controller: 'addNewArticleCtrl',
+    controllerAs: 'addNewArticleCtrl'
   }
 }
 
-export default newArticle
+export default addArticle
   .component('addNewArticle', addNewArticle())
   .name;

@@ -1,18 +1,24 @@
-<form action="#" method="#" name="newArticle" id="newArticle">
-  <fieldset>
-    <label className="elegant-label" htmlFor="elegant-title">Insert Title</label>
-    <input className="elegant-input" type="text" name="elegant-title" id="title" />
-  </fieldset>
-  <fieldset>
-    <label className="elegant-image-button" htmlFor="elegant-image">
-      <input type="file" name="image" id="elegant-image"/>
-      <span>Choose Image</span>
-    </label>
-
-  </fieldset>
-  <fieldset>
-    <label className="elegant-label" htmlFor="elegant-text">Insert Text</label>
-    <textarea className="elegant-textarea" name="content" id="elegant-text"></textarea>
-  </fieldset>
-  <input className="elegant-button" type="submit" value="Add Article"/>
-</form>
+<div class="add-new-article">
+  <form action="#" method="#" name="newArticle" id="newArticle">
+    <fieldset>
+      <label class="elegant-label" htmlFor="elegant-title">Insert Title</label>
+      <input class="elegant-input" type="text" name="elegant-title" id="title" ng-model="addNewArticleCtrl.data.title" />
+    </fieldset>
+    <fieldset>
+      <label class="elegant-image-button" htmlFor="elegant-image">
+        <input type="file" name="image" id="elegant-image" ng-model="addNewArticleCtrl.data.image"/>
+        <span>Choose Image</span>
+      </label>
+    </fieldset>
+    <fieldset>
+      <label class="elegant-label" htmlFor="elegant-text">Insert Text</label>
+      <textarea class="elegant-textarea" name="content" id="elegant-text" ng-model="addNewArticleCtrl.data.description"></textarea>
+    </fieldset>
+    <input class="elegant-button" type="submit" value="Add Article"/>
+  </form>
+</div>
+<div class="">
+  {{addNewArticleCtrl.data.title}}
+  {{addNewArticleCtrl.data.description}}
+  {{addNewArticleCtrl.data.image}}
+</div>

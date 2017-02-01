@@ -9,7 +9,7 @@ article.controller('articleCtrl', ArticleCtrl);
 function blogArticle() {
   return {
     bindings: {
-      articleId: '<'
+      articleData: '<'
     },
     restrict: 'E',
     template: require('./article.html'),
