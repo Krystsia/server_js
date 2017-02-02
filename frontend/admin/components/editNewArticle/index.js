@@ -1,8 +1,9 @@
 import angular from 'angular';
 import EditNewArticleCtrl from './editNewArticle.ctrl';
+import angularFileUpload from '../../../node_modules/angular-file-upload/dist/angular-file-upload.js';
 import  './editNewArticle.scss';
 
-const editArticle = angular.module('components.editArticle', []);
+const editArticle = angular.module('components.editArticle', ['angularFileUpload']);
 
 editArticle.controller('editNewArticleCtrl', EditNewArticleCtrl);
 

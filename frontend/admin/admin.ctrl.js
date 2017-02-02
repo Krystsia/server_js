@@ -8,6 +8,7 @@ export default class AdminCtrl {
     $scope.$on('reload', () => {
       let data = getArticles.toArticles.get({}, () => {
         this.articles = data.articles;
+      
       });
     });
     this.$onInit = () => {

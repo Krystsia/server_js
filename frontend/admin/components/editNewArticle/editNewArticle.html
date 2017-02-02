@@ -1,13 +1,40 @@
 <div class="edit-new-article">
   <h2>Edit Article</h2>
-  <form action="#" method="#" name="newArticle" id="newArticle">
+  <form
+    name="newArticle"
+    id="newArticle"
+    ng-submit="editNewArticleCtrl.onUpdateArticle()"
+  >
     <fieldset>
-      <label class="elegant-label" htmlFor="elegant-title">Change Title</label>
-      <input class="elegant-input" type="text" name="elegant-title" id="title" value="{{editNewArticleCtrl.article.title}}"/>
+      <label
+        class="elegant-label"
+        htmlFor="elegant-title"
+      >
+        Change Title
+      </label>
+      <input
+        class="elegant-input"
+        type="text"
+        name="elegant-title"
+        id="title"
+        value="{{editNewArticleCtrl.data.title}}"
+        ng-model="editNewArticleCtrl.data.title"
+    />
     </fieldset>
     <fieldset>
-      <label class="elegant-image-button" htmlFor="elegant-image">
-        <input type="file" name="image" id="elegant-image" />
+      <label
+        class="elegant-image-button"
+        htmlFor="elegant-image"
+      >
+        <input
+          type="file"
+          name="image"
+          id="elegant-image"
+          ng-model="editNewArticleCtrl.data.image"
+          nv-file-select
+          nv-file-drop
+          uploader="editNewArticleCtrl.uploader"
+        />
         <span>Choose Another Image</span>
       </label>
     </fieldset>
@@ -17,9 +44,26 @@
     </div>
   </fieldset>
     <fieldset>
-      <label class="elegant-label" htmlFor="elegant-text">Change Text</label>
-      <textarea class="elegant-textarea" type="text" name="content" id="elegant-text">{{editNewArticleCtrl.article.description}}</textarea>
+      <label
+        class="elegant-label"
+        htmlFor="elegant-text"
+      >
+        Change Text
+      </label>
+      <textarea
+        class="elegant-textarea"
+        type="text"
+        name="content"
+        id="elegant-text"
+        ng-model="editNewArticleCtrl.data.content"
+      >
+        {{editNewArticleCtrl.data.content}}
+      </textarea>
     </fieldset>
-    <input class="elegant-button" type="submit" value="Save Changes" />
+    <input
+      class="elegant-button"
+      type="submit"
+      value="Save Changes"
+    />
   </form>
 </div>

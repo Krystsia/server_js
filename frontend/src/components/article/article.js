@@ -4,7 +4,7 @@ import './article.scss';
 
 export default class Article extends Component {
   render() {
-    const { title, description, publishedAt, username, urlToImage } = this.props.article;
+    const { title, content, publishedAt, username, urlToImage } = this.props.article;
     const wholePublishedDate = new Date(publishedAt);
     const publishedDate = ` ${wholePublishedDate.getFullYear()}/${wholePublishedDate.getMonth()}/${wholePublishedDate.getDate()} `
     return <article>
@@ -12,7 +12,7 @@ export default class Article extends Component {
               <div className="article-image">
                 <img  src={urlToImage} />
               </div>
-              <p className="article-description">{description}
+              <p className="article-description">{content}
 
               </p>
               <footer>
@@ -26,7 +26,7 @@ export default class Article extends Component {
 Article.propTypes = {
   article: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
     username: PropTypes.string.isRequired,
     urlToImage: PropTypes.string.isRequired
   })

@@ -1,7 +1,7 @@
 import getArticles from '../../services/getArticles';
 
 export default class AddNewArticleCtrl {
-  constructor(FileUploader, getArticles, $scope) {
+  constructor($scope, FileUploader, getArticles) {
     this.data = {};
     this.uploader = new FileUploader({
       url: '/addNewArticle'
@@ -23,4 +23,4 @@ export default class AddNewArticleCtrl {
   }
 }
 
-AddNewArticleCtrl['$inject'] = ['FileUploader', 'getArticles', '$scope'];
+AddNewArticleCtrl['$inject'] = ['$scope', 'FileUploader', 'getArticles'];

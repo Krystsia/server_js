@@ -11,11 +11,11 @@ const BlogArticleSchema = mongoose.Schema({
   },
   title: {
     type: String,
-    // required: true
+    required: true
   },
-  description: {
+  content: {
     type: String,
-    // required: true
+    //required: true
   },
   url: {
     type: String

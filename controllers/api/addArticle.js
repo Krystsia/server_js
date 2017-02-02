@@ -6,7 +6,7 @@ const imageStore = path.join(pwd, 'public/images');
 
 
 module.exports = (req, res, next) => {
-console.log(req.files);
+console.log(req.body);
   const image = req.files.image ? req.files.image : req.files.file;
   if(req.files) {
     fs.writeFile(path.join(imageStore, image.name), image.data, (err) => {
@@ -15,7 +15,7 @@ console.log(req.files);
       let blogArticle = new BlogArticle({
         username: "Kirill",
         title: req.body.title,
-        description: req.body.content,
+        content: req.body.content,
         url: "#",
         publishedAt: new Date().toString(),
         urlToImage: './images/' + image.name
