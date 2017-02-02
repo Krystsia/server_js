@@ -3,12 +3,19 @@ import getArticles from './services/getArticles';
 import  './admin.scss';
 
 export default class AdminCtrl {
-  constructor(getArticles) {
+  constructor($scope, getArticles) {
 
-    let data = getArticles.toArticles.get({}, () => {
-      this.articles = data.articles;
+    $scope.$on('reload', () => {
+      let data = getArticles.toArticles.get({}, () => {
+        this.articles = data.articles;
+      });
     });
-  }
+    this.$onInit = () => {
+      let data = getArticles.toArticles.get({}, () => {
+        this.articles = data.articles;
+      });
+    };
+  };
 }
 
-AdminCtrl['$inject'] = ['getArticles'];
+AdminCtrl['$inject'] = ['$scope', 'getArticles'];

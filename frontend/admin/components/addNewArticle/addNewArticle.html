@@ -1,5 +1,5 @@
 <div class="add-new-article">
-  <form action="#" method="#" name="newArticle" id="newArticle">
+  <form name="newArticle" id="newArticle" ng-submit="addNewArticleCtrl.onAddArticle()">
     <fieldset>
       <label class="elegant-label" htmlFor="elegant-title">Insert Title</label>
       <input class="elegant-input" type="text" name="elegant-title" id="title" ng-model="addNewArticleCtrl.data.title" />
@@ -21,9 +21,13 @@
     </fieldset>
     <fieldset>
       <label class="elegant-label" htmlFor="elegant-text">Insert Text</label>
-      <textarea class="elegant-textarea" name="content" id="elegant-text" ng-model="addNewArticleCtrl.data.description"></textarea>
+      <textarea class="elegant-textarea" name="content" id="elegant-text" ng-model="addNewArticleCtrl.data.content"></textarea>
     </fieldset>
-    <input class="elegant-button" type="submit" value="Add Article" ng-click="addNewArticleCtrl.onAddArticle"/>
+    <input
+      class="elegant-button"
+      type="submit"
+      value="Add Article"
+    />
   </form>
 </div>
 <div class="">

@@ -1,18 +1,26 @@
 import getArticles from '../../services/getArticles';
 
 export default class AddNewArticleCtrl {
-  constructor(FileUploader, getArticles) {
+  constructor(FileUploader, getArticles, $scope) {
     this.data = {};
-    this.uploader = new FileUploader();
-    console.log(this.uploader);
+    this.uploader = new FileUploader({
+      url: '/addNewArticle'
+    });
 
+    this.uploader.removeAfterUpload = true;
+    this.uploader.onCompleteAll  = () => {
+      this.uploader.destroy();
+      $scope.$emit('reload');
+      this.data = {};
+    }
+    this.$onChanges = () => {
+      this.uploader.formData.push(this.data);
+    }
   }
 
-  // onAddArticle() {
-  //   this.uploader.formdata.push(this.data);
-  //   this.uploader.upload();
-  // }
+  onAddArticle() {
+    this.uploader.uploadAll();
+  }
 }
 
-AddNewArticleCtrl['$inject'] = ['FileUploader'];
-AddNewArticleCtrl['$inject'] = ['getArticles'];
+AddNewArticleCtrl['$inject'] = ['FileUploader', 'getArticles', '$scope'];

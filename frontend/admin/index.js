@@ -1,9 +1,8 @@
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
 import ngResource from 'angular-resource';
+
 import routing from './app.routing';
-// import mainHeader from './components/header';
-// import blogArticle from './components/article';
 import components from './components';
 import getArticles from './services/getArticles';
 import AdminCtrl from './admin.ctrl';

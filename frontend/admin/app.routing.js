@@ -2,7 +2,7 @@ import getArticles from './services/getArticles';
 
 
 export default function routing($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/');
+  // $urlRouterProvider.otherwise('/admin');
 
   $stateProvider
     .state('admin', {
@@ -10,10 +10,6 @@ export default function routing($stateProvider, $urlRouterProvider) {
       template: require("./admin.html"),
       controller: 'AdminCtrl',
       controllerAs: 'AdminCtrl'
-    })
-    .state('addArticle', {
-      url: '/admin/addArticle',
-      template: require("./add-aritcle.html"),
     })
     .state('editArticle', {
       url: '/admin/editArticle/:articleID',

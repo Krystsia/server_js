@@ -11,11 +11,11 @@ const BlogArticleSchema = mongoose.Schema({
   },
   title: {
     type: String,
-    required: true
+    // required: true
   },
   description: {
     type: String,
-    required: true
+    // required: true
   },
   url: {
     type: String
@@ -25,7 +25,7 @@ const BlogArticleSchema = mongoose.Schema({
   },
   urlToImage: {
     type: String,
-    required: true
+    // required: true
   }
 });
 
