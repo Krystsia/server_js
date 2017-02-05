@@ -24,6 +24,7 @@ router.route('/register')
 router.get('/logout', controllers.api.logout);
 
 router.post('/addNewArticle', controllers.api.addArticle);
+router.post('/updateNewArticle', controllers.api.updateArticle);
 router.get('/getArticles', controllers.api.getArticles);
 
 

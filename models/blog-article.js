@@ -15,7 +15,7 @@ const BlogArticleSchema = mongoose.Schema({
   },
   content: {
     type: String,
-    //required: true
+    required: true
   },
   url: {
     type: String

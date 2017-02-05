@@ -19,6 +19,7 @@
         id="title"
         value="{{editNewArticleCtrl.data.title}}"
         ng-model="editNewArticleCtrl.data.title"
+        ng-blur="editNewArticleCtrl.addData()"
     />
     </fieldset>
     <fieldset>
@@ -31,12 +32,14 @@
           name="image"
           id="elegant-image"
           ng-model="editNewArticleCtrl.data.image"
+          value="{{editNewArticleCtrl.article.urlToImage}}"
           nv-file-select
           nv-file-drop
           uploader="editNewArticleCtrl.uploader"
         />
         <span>Choose Another Image</span>
       </label>
+      <div>{{editNewArticleCtrl.uploader.queue[0].file.name}}</div>
     </fieldset>
     <fieldset>
     <div class="article-image">
@@ -56,6 +59,7 @@
         name="content"
         id="elegant-text"
         ng-model="editNewArticleCtrl.data.content"
+        ng-blur="editNewArticleCtrl.addData()"
       >
         {{editNewArticleCtrl.data.content}}
       </textarea>

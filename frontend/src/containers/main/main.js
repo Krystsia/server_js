@@ -28,7 +28,7 @@ class Main extends Component {
 
 function mapStateToProps(state) {
   return {
-    articles: state.articles.filter(article => article.description.includes(state.filterArticles))
+    articles: state.articles.filter(article => article.content.includes(state.filterArticles))
   }
 }
 

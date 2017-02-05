@@ -1,4 +1,5 @@
 <div class="add-new-article">
+  <h2>Add New Article</h2>
   <form
     name="newArticle"
     id="newArticle"
@@ -6,7 +7,14 @@
   >
     <fieldset>
       <label class="elegant-label" htmlFor="elegant-title">Insert Title</label>
-      <input class="elegant-input" type="text" name="elegant-title" id="title" ng-model="addNewArticleCtrl.data.title" />
+      <input
+        class="elegant-input"
+        type="text"
+        name="elegant-title"
+        id="title"
+        required
+        ng-model="addNewArticleCtrl.data.title"
+        ng-blur="addNewArticleCtrl.addData()" />
     </fieldset>
     <fieldset>
       <label class="elegant-image-button" htmlFor="elegant-image">
@@ -14,6 +22,7 @@
           type="file"
           name="image"
           id="elegant-image"
+          required
           ng-model="addNewArticleCtrl.data.image"
           nv-file-select
           nv-file-drop
@@ -34,7 +43,10 @@
         class="elegant-textarea"
         name="content"
         id="elegant-text"
+        text-area-validation
+        required
         ng-model="addNewArticleCtrl.data.content"
+        ng-blur="addNewArticleCtrl.addData()"
       ></textarea>
     </fieldset>
     <input
@@ -43,9 +55,4 @@
       value="Add Article"
     />
   </form>
-</div>
-<div class="">
-  {{addNewArticleCtrl.data.title}}
-  {{addNewArticleCtrl.data.content}}
-  {{addNewArticleCtrl.uploader.queue[0].file.name}}
 </div>
