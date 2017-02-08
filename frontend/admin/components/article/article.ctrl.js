@@ -1,5 +1,3 @@
 export default class ArticleCtrl {
-  constructor() {
-
-  }
+  constructor() {}
 }

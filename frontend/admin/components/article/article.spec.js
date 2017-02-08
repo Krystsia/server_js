@@ -1,5 +1,4 @@
-import angular from 'angular';
-require ('angular-mocks');
+
 require ('./index.js');
 require ('./article.ctrl.js');
 

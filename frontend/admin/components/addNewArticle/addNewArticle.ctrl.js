@@ -9,7 +9,7 @@ export default class AddNewArticleCtrl {
 
     this.$onInit = () => {
       this.uploader.removeAfterUpload = true;
-      this.uploader.onCompleteAll  = () => {
+      this.uploader.onCompleteAll = () => {
         this.uploader.destroy();
         $scope.$emit('reload');
         this.data = {};

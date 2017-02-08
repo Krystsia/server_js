@@ -17,13 +17,13 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      './admin/**/*spec.js'
+      './admin/test.js'
     ],
 
     webpack: webpackConfig,
 
     preprocessors: {
-      './admin/**/*spec.js': ['webpack'],
+      './admin/test.js': ['webpack'],
 
     },
 
